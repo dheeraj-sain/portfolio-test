@@ -1,0 +1,301 @@
+.section-offer{
+    padding: 10px 0;
+    
+}
+.image-background {
+    position: relative;
+    width: 100%;
+    /* Adjusts the width to 100% of its parent container */
+    max-width: 1920px;
+    /* Maximum width of the image */
+    margin: 0px 0;
+    /* Add some margin to the container */
+}
+
+.image-background img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    /* Reduce the height to match text */
+    object-fit: cover;
+    /* Ensures the image covers the container */
+    display: block;
+}
+
+.black-film {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.662);
+    /* Semi-transparent black overlay */
+}
+
+.image-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+}
+
+.image-overlay-text h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 54px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+.image-overlay-text h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+}
+
+.hire-card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.single-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    margin: 10px;
+    flex: 1;
+    max-width: 22%;
+    min-width: 200px;
+    text-align: center;
+    color: #007bff;
+    min-height: 250px;
+}
+
+.single-card h3 {
+    margin: 20px 0 10px;
+    font-size: 1.8em;
+}
+
+.single-card p {
+    font-size: 1.1em;
+    color: #000000;
+}
+
+.single-card i {
+    font-size: 2em;
+    /* Size of the icon */
+    color: #007bff;
+    /* Color of the icon */
+    margin-bottom: 15px;
+    /* Space between the icon and the text */
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    /* Full viewport height */
+}
+
+.profile-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.profile-image {
+    flex: 0 0 200px;
+    max-width: 200px;
+    margin-right: 20px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h2 {
+    margin: 0 0 10px;
+    font-size: 1.8em;
+    color: #000000;
+}
+
+.profile-details p {
+    color: #000000;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.profile-details .position {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 15px;
+}
+
+
+
+.why-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.why-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.why-card h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.why-card h3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+}
+
+.why-card p {
+    color: #000000;
+    line-height: 1.5;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .single-card {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .single-card {
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+.center-wrapper1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    /* Full viewport height */
+}
+
+.profile-container1 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.profile-image1 {
+    max-width: 30%;
+    margin-right: 20px;
+}
+
+.profile-image1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.profile-details1 {
+    flex: 1;
+}
+
+.profile-details1 h2 {
+    margin: 0 0 10px;
+    font-size: 1.8em;
+    color: #000000;
+}
+
+.profile-details1 p {
+    color: #000000;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.profile-details1 .position1 {
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 15px;
+}
+
+
+.conf-schedule {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px !important;
+    font-size: 16px;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-size: 22px !important;
+}
