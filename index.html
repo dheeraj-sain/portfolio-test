@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dheeraj Sain - Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .resume-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #f39c12, #e74c3c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .title {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .main-content {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #e74c3c;
+        }
+
+        .experience-item, .education-item, .project-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .education-item:hover, .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-title, .degree-title, .project-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company, .institution {
+            color: #3498db;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-top: 4px solid #3498db;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .achievements h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .achievements ul {
+            list-style: none;
+        }
+
+        .achievements li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .achievements li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(52, 152, 219, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            .download-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume-card">
+            <div class="header">
+                <div class="profile-img">DS</div>
+                <h1 class="name">Dheeraj Sain</h1>
+                <p class="title">Senior Software Engineer</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <span>dheeraj.sain@email.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+91 9876543210</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Bangalore, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>🔗</span>
+                        <span>linkedin.com/in/dheeraj-sain</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="left-column">
+                    <div class="section">
+                        <h2 class="section-title">Professional Summary</h2>
+                        <p>Passionate Senior Software Engineer with 6+ years of experience in full-stack development, specializing in React, Node.js, and cloud technologies. Proven track record of leading development teams and delivering scalable solutions for enterprise applications. Strong advocate for clean code, agile methodologies, and continuous learning.</p>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Experience</h2>
+                        
+                        <div class="experience-item">
+                            <div class="job-title">Senior Software Engineer</div>
+                            <div class="company">TechCorp Solutions</div>
+                            <div class="date">Jan 2022 - Present</div>
+                            <p>Leading a team of 5 developers in building microservices architecture using React and Node.js. Implemented CI/CD pipelines reducing deployment time by 60%. Mentored junior developers and conducted code reviews.</p>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="job-title">Full Stack Developer</div>
+                            <div class="company">Digital Innovations Pvt Ltd</div>
+                            <div class="date">Mar 2020 - Dec 2021</div>
+                            <p>Developed and maintained web applications using React, Express.js, and MongoDB. Collaborated with UI/UX team to implement responsive designs. Optimized database queries improving application performance by 40%.</p>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="job-title">Software Developer</div>
+                            <div class="company">StartUp Dynamics</div>
+                            <div class="date">Jul 2018 - Feb 2020</div>
+                            <p>Built RESTful APIs and integrated third-party services. Worked on frontend using React and backend with Python Django. Participated in agile development cycles and sprint planning.</p>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Projects</h2>
+                        
+                        <div class="project-item">
+                            <div class="project-title">E-Commerce Platform</div>
+                            <div class="date">2023</div>
+                            <p>Built a complete e-commerce solution with React frontend, Node.js backend, and MongoDB database. Implemented payment gateway integration and real-time inventory management.</p>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">Task Management System</div>
+                            <div class="date">2022</div>
+                            <p>Developed a collaborative task management tool with real-time updates using Socket.io. Features include drag-and-drop interface, file sharing, and team collaboration tools.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="section">
+                        <h2 class="section-title">Technical Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <ul class="skill-list">
+                                    <li>React.js</li>
+                                    <li>Vue.js</li>
+                                    <li>JavaScript (ES6+)</li>
+                                    <li>TypeScript</li>
+                                    <li>HTML5 & CSS3</li>
+                                    <li>Tailwind CSS</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <ul class="skill-list">
+                                    <li>Node.js</li>
+                                    <li>Express.js</li>
+                                    <li>Python</li>
+                                    <li>Django</li>
+                                    <li>RESTful APIs</li>
+                                    <li>GraphQL</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>Database</h4>
+                                <ul class="skill-list">
+                                    <li>MongoDB</li>
+                                    <li>PostgreSQL</li>
+                                    <li>MySQL</li>
+                                    <li>Redis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <h4>DevOps & Tools</h4>
+                                <ul class="skill-list">
+                                    <li>AWS</li>
+                                    <li>Docker</li>
+                                    <li>Git</li>
+                                    <li>Jenkins</li>
+                                    <li>Kubernetes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Education</h2>
+                        
+                        <div class="education-item">
+                            <div class="degree-title">B.Tech in Computer Science</div>
+                            <div class="institution">Indian Institute of Technology, Delhi</div>
+                            <div class="date">2014 - 2018</div>
+                            <p>CGPA: 8.2/10. Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering.</p>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Certifications</h2>
+                        
+                        <div class="education-item">
+                            <div class="degree-title">AWS Solutions Architect</div>
+                            <div class="institution">Amazon Web Services</div>
+                            <div class="date">2023</div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="degree-title">React Developer Certification</div>
+                            <div class="institution">Meta</div>
+                            <div class="date">2022</div>
+                        </div>
+                    </div>
+
+                    <div class="achievements">
+                        <h3>Key Achievements</h3>
+                        <ul>
+                            <li>Employee of the Year 2023</li>
+                            <li>Led migration to microservices saving $50K annually</li>
+                            <li>Published 3 technical articles on Medium</li>
+                            <li>Speaker at ReactConf Bangalore 2023</li>
+                            <li>Open source contributor with 100+ GitHub stars</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="download-btn" onclick="downloadPDF()">📄 Download PDF</button>
+
+    <script>
+        function downloadPDF() {
+            // In a real implementation, this would generate and download a PDF
+            alert('PDF download functionality would be implemented here. You can use libraries like jsPDF or html2pdf.js to generate PDFs from this HTML.');
+        }
+
+        // Add smooth scrolling and interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add typing effect to name
+            const nameElement = document.querySelector('.name');
+            const originalText = nameElement.textContent;
+            nameElement.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < originalText.length) {
+                    nameElement.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
