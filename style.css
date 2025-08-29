@@ -632,7 +632,8 @@ body {
 	Start Hero Area CSS
 =============================*/
 .slider .single-slider {
-	height: 600px;
+	height: 700px;
+	width: 100%;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -1364,7 +1365,7 @@ body {
 .why-choose .choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('/img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -5241,7 +5242,7 @@ button:hover {
 .deve-why-choose .deve-choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -5464,7 +5465,7 @@ button:hover {
 .infra-why-choose .infra-choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -5673,7 +5674,7 @@ button:hover {
 .devops-why-choose .devops-choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -5882,7 +5883,7 @@ button:hover {
 .sec-why-choose .sec-choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -6121,7 +6122,7 @@ button:hover {
 .mob-why-choose .mob-choose-right3 {
 	height: 100%;
 	width: 100%;
-	background-image: url('img/yogesh.jpg');
+	background-image: url('img/yogesh.png');
 	background-size: contain;
 	background-position: top;
 	background-repeat: no-repeat;
@@ -6179,3 +6180,88 @@ button:hover {
 	-webkit-animation-delay: 2s;
 	animation-delay: 2s;
 }
+<<<<<<< HEAD
+.certifications-section {
+	margin-top: 20px;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.certifications-logos {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 40px;
+
+}
+
+.cert-logo {
+	text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.cert-logo:hover {
+	transform: translateY(-5px);
+}
+
+.cert-logo img {
+	width: 120px;
+	height: 120px;
+	border-radius: 20%;
+	border: 0.4px solid #fff;
+	background: #fff;
+	padding: 2px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	transition: all 0.3s ease;
+	object-fit: contain;
+}
+
+.cert-logo img:hover {
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+	transform: scale(1.05);
+}
+
+.cert-logo p {
+	color: #fff;
+	font-size: 14px;
+	margin-top: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+}
+
+@media (max-width: 768px) {
+	.certifications-logos {
+		gap: 25px;
+	}
+	
+	.cert-logo img {
+		width: 90px;
+		height: 90px;
+		padding: 12px;
+	}
+	
+	.cert-logo p {
+		font-size: 12px;
+	}
+	
+	.certifications-section h3 {
+		font-size: 20px;
+		margin-bottom: 25px;
+	}
+}
+
+@media (max-width: 480px) {
+	.certifications-logos {
+		gap: 20px;
+	}
+	
+	.cert-logo img {
+		width: 70px;
+		height: 70px;
+		padding: 10px;
+	}
+}
+=======
+>>>>>>> 6da2651359e6679954a145254d274e282d057578
